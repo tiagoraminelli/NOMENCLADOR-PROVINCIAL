@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Nomenclador Enfermería 2026 | Calculadora de Honorarios | CPE Santa Fe</title>
+    <meta name="description" content="Calculá tus honorarios profesionales según el Nomenclador 2026 del Colegio de Profesionales en Enfermería de Santa Fe. Basado en UPE (Unidad de Producción de Enfermería) con valores actualizados.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: #f8fafc; }
+        .card-hover:hover { transform: translateY(-2px); transition: all 0.2s ease; box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.1); }
+        .gradient-border { background: linear-gradient(135deg, #10b981, #3b82f6); padding: 1px; border-radius: 1.5rem; }
+        .custom-scroll::-webkit-scrollbar { height: 6px; width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .custom-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        input[type="number"]::-webkit-inner-spin-button, 
+        input[type="number"]::-webkit-outer-spin-button { opacity: 0.5; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- HERO -->
+    <header class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur rounded-full px-4 py-2 mb-6">
+                    <i class="fas fa-stethoscope text-emerald-400 text-sm"></i>
+                    <span class="text-sm font-medium">Nomenclador 2026 · Colegio de Enfermería Santa Fe</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-emerald-200">
+                    Calculá cuánto cobrar como enfermero en 2026
+                </h1>
+                <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                    Herramienta oficial basada en UPE (Unidad de Producción de Enfermería). 
+                    <span class="block text-sm mt-2">1 UPE = 3 minutos · Resolución 194/95</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#calculadora" class="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-xl transition-all shadow-lg">
+                        <i class="fas fa-calculator"></i> Calcular honorarios
+                    </a>
+                    <a href="#prestaciones" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur border border-white/20 font-semibold px-8 py-4 rounded-xl transition-all">
+                        <i class="fas fa-list-ul"></i> Nomenclador completo (150+)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- EXPLICACIÓN SIMPLE (UX) -->
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover">
+                <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-chart-line text-emerald-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">¿Qué es UPE?</h3>
+                <p class="text-slate-600">Unidad de Producción de Enfermería. <strong class="font-semibold">1 UPE = 3 minutos</strong>. Cada prestación tiene un valor en UPE según complejidad y tiempo (Resolución 194/95).</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover">
+                <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-file-invoice-dollar text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Valores UPE 2026</h3>
+                <p class="text-slate-600 text-sm space-y-1">
+                    <span class="block">🏥 Consultorio Diurno: <strong>$1.080,37</strong></span>
+                    <span class="block">🌙 Consultorio Nocturno: <strong>$1.559,96</strong></span>
+                    <span class="block">🏠 Domicilio Diurno: <strong>$1.559,96</strong></span>
+                    <span class="block">🌙 Domicilio Nocturno: <strong>$1.860,70</strong></span>
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 card-hover">
+                <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                    <i class="fas fa-calculator text-purple-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-2">Cómo se calcula</h3>
+                <p class="text-slate-600"><span class="font-mono bg-slate-100 px-1 rounded">Precio = UPE × Valor_UPE</span><br>Ejemplo: Curación simple (6 UPE) en Domicilio Nocturno = 6 × $1.860,70 = <strong>$11.164,20</strong></p>
+            </div>
+        </div>
+
+        <!-- BUSCADOR + CALCULADORA INTELIGENTE -->
+        <div id="calculadora" class="gradient-border mb-16">
+            <div class="bg-white rounded-2xl p-6 md:p-8">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-800">Calculadora inteligente</h2>
+                    <div class="relative">
+                        <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="searchPrestacion" placeholder="Buscar prestación (vacunas, curación, nebulización...)" class="pl-11 pr-4 py-3 border border-slate-200 rounded-xl w-full md:w-80 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-4 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Prestación</label>
+                        <select id="selectPrestacion" class="w-full border border-slate-200 rounded-xl px-4 py-3 bg-white focus:ring-2 focus:ring-emerald-500">
+                            <option value="">Seleccionar prestación</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Modalidad</label>
+                        <select id="tipoServicio" class="w-full border border-slate-200 rounded-xl px-4 py-3 bg-white">
+                            <option value="CD">Consultorio Diurno (CD) - $1.080,37 x UPE</option>
+                            <option value="CN">Consultorio Nocturno (CN) - $1.559,96 x UPE (20hs a 7hs)</option>
+                            <option value="DD">Domicilio Diurno (DD) - $1.559,96 x UPE</option>
+                            <option value="DN">Domicilio Nocturno (DN) - $1.860,70 x UPE</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Cantidad</label>
+                        <input type="number" id="cantidad" value="1" min="1" class="w-full border border-slate-200 rounded-xl px-4 py-3">
+                    </div>
+                </div>
+                <div class="bg-slate-50 rounded-xl p-5 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div>
+                        <p class="text-sm text-slate-500">Total estimado</p>
+                        <p class="text-3xl font-bold text-slate-800" id="precioCalculado">$0,00</p>
+                        <p class="text-xs text-slate-400" id="detalleUpe">Seleccioná una prestación</p>
+                    </div>
+                    <button id="btnAgregarPresupuesto" class="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-xl font-semibold transition flex items-center gap-2">
+                        <i class="fas fa-plus-circle"></i> Agregar al presupuesto
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- GENERADOR DE PRESUPUESTO -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 mb-16">
+            <div class="flex justify-between items-center flex-wrap gap-3 mb-6">
+                <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-2"><i class="fas fa-file-invoice text-emerald-500"></i> Presupuesto profesional</h2>
+                <button id="exportarPresupuesto" class="bg-slate-800 hover:bg-slate-900 text-white px-5 py-2 rounded-xl text-sm font-medium transition flex items-center gap-2">
+                    <i class="fas fa-download"></i> Exportar (CSV)
+                </button>
+            </div>
+            <div class="overflow-x-auto custom-scroll">
+                <table class="w-full text-left">
+                    <thead class="bg-slate-50 rounded-xl">
+                        <tr>
+                            <th class="px-4 py-3 text-slate-600 font-semibold">Prestación</th>
+                            <th class="px-4 py-3 text-slate-600 font-semibold">Modalidad</th>
+                            <th class="px-4 py-3 text-slate-600 font-semibold">UPE</th>
+                            <th class="px-4 py-3 text-slate-600 font-semibold">Cant.</th>
+                            <th class="px-4 py-3 text-slate-600 font-semibold">Subtotal</th>
+                            <th class="px-4 py-3 text-slate-600 font-semibold"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="presupuestoTbody">
+                        <tr><td colspan="6" class="text-center py-8 text-slate-400">No hay items. Agregá desde la calculadora.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="border-t border-slate-100 mt-6 pt-5 flex justify-end">
+                <div class="text-right">
+                    <p class="text-sm text-slate-500">TOTAL PRESUPUESTO</p>
+                    <p class="text-3xl font-bold text-slate-800" id="totalPresupuesto">$0,00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CALCULADORA DE HORA DE ENFERMERÍA (Basada en documento oficial) -->
+        <div class="bg-gradient-to-r from-indigo-50 to-sky-50 rounded-2xl p-6 md:p-8 mb-16">
+            <h2 class="text-2xl font-bold text-slate-800 mb-2">Calculadora de hora de enfermería</h2>
+            <p class="text-slate-600 mb-6">Según clasificación de pacientes del Programa Nacional de Garantías de Calidad (Resolución 194/95)</p>
+            <div class="grid md:grid-cols-4 gap-5">
+                <div>
+                    <label class="block font-medium mb-2">Paciente</label>
+                    <select id="tipoPaciente" class="w-full border border-slate-200 rounded-xl p-3 bg-white">
+                        <option value="adulto">Adulto</option>
+                        <option value="pediatrico">Pediátrico</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-medium mb-2">Complejidad</label>
+                    <select id="complejidad" class="w-full border border-slate-200 rounded-xl p-3 bg-white">
+                        <option value="minimo">Mínimos (15 UPE adulto / 25 UPE pediátrico)</option>
+                        <option value="moderado">Moderados (20 UPE adulto / 30 UPE pediátrico)</option>
+                        <option value="especial">Especiales (25 UPE adulto / 35 UPE pediátrico)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-medium mb-2">Turno</label>
+                    <select id="turnoHora" class="w-full border border-slate-200 rounded-xl p-3 bg-white">
+                        <option value="DD">Domicilio Diurno ($1.559,96 x UPE)</option>
+                        <option value="DN">Domicilio Nocturno ($1.860,70 x UPE)</option>
+                        <option value="CD">Consultorio Diurno ($1.080,37 x UPE)</option>
+                        <option value="CN">Consultorio Nocturno ($1.559,96 x UPE)</option>
+                    </select>
+                </div>
+                <div class="bg-white rounded-xl p-4 flex flex-col justify-center">
+                    <span class="text-xs text-slate-500">Valor hora estimado</span>
+                    <div class="text-2xl font-bold text-indigo-700" id="valorHoraEnfermeria">$0,00</div>
+                    <div class="text-xs text-slate-400" id="detalleHora">Seleccioná parámetros</div>
+                </div>
+            </div>
+            <div class="mt-4 text-xs text-slate-500 bg-white/50 p-3 rounded-lg">
+                <i class="fas fa-info-circle"></i> Basado en el documento oficial: Adultos (15/20/25 UPE) · Pediátricos (25/30/35 UPE) · Horario nocturno: 20hs a 7hs
+            </div>
+        </div>
+
+        <!-- TABLA COMPLETA DEL NOMENCLADOR -->
+        <div id="prestaciones" class="mb-12">
+            <div class="flex justify-between items-center flex-wrap gap-3 mb-5">
+                <h2 class="text-2xl font-bold text-slate-800">Nomenclador completo 2026</h2>
+                <div class="relative">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                    <input type="text" id="filtroTabla" placeholder="Filtrar prestaciones..." class="pl-9 pr-3 py-2 border rounded-lg text-sm w-64">
+                </div>
+            </div>
+            <div class="overflow-x-auto custom-scroll rounded-xl border border-slate-200 bg-white">
+                <table class="min-w-[1000px] w-full">
+                    <thead class="bg-slate-50 border-b sticky top-0">
+                        <tr>
+                            <th class="px-4 py-3 text-left text-sm font-semibold text-slate-600">Prestación</th>
+                            <th class="px-4 py-3 text-left text-sm font-semibold text-slate-600">Tiempo</th>
+                            <th class="px-4 py-3 text-left text-sm font-semibold text-slate-600">UPE</th>
+                            <th class="px-4 py-3 text-left text-sm font-semibold text-slate-600">CD</th>
+                            <th class="px-4 py-3 text-left text-sm font-semibold text-slate-600">CN</th>
+                            <th class="px-4 py-3 text-left text-sm font-semibold text-slate-600">DD</th>
+                            <th class="px-4 py-3 text-left text-sm font-semibold text-slate-600">DN</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaNomencladorBody"></tbody>
+                </table>
+            </div>
+            <p class="text-xs text-slate-400 mt-3 text-center">* No incluye insumos · Valores en pesos argentinos</p>
+        </div>
+
+        <!-- SERVICIOS ESPECIALES (Salud Laboral, Guardias, Auditoría) -->
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+            <div class="bg-white rounded-2xl p-6 border border-slate-100">
+                <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-4"><i class="fas fa-briefcase-medical text-emerald-500"></i> Salud Laboral</h3>
+                <div class="space-y-3 text-sm">
+                    <div class="flex justify-between border-b pb-2"><span class="font-medium">Consultorio con salida a terreno (15 UPE)</span><span class="font-mono">$16.205,55 (diurno)</span></div>
+                    <div class="flex justify-between border-b pb-2"><span class="font-medium">Especialista (25 UPE)</span><span class="font-mono">$27.009,25 (diurno)</span></div>
+                    <div class="flex justify-between"><span class="font-medium">Nocturno / feriados</span><span class="font-mono">$23.399,40 / $38.999,00</span></div>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 border border-slate-100">
+                <h3 class="text-xl font-bold text-slate-800 flex items-center gap-2 mb-4"><i class="fas fa-ambulance text-emerald-500"></i> Guardias en Ambulancia</h3>
+                <div class="space-y-3 text-sm">
+                    <div class="flex justify-between border-b pb-2"><span class="font-medium">Mediana complejidad (15 UPE)</span><span class="font-mono">$16.205,55 (diurno)</span></div>
+                    <div class="flex justify-between"><span class="font-medium">Máxima complejidad (25 UPE)</span><span class="font-mono">$27.009,25 (diurno)</span></div>
+                    <div class="text-xs text-slate-400 mt-2">Nocturno: +$23.399,40 / $38.999,00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-white rounded-2xl p-6 border border-slate-100">
+                <h3 class="text-lg font-bold text-slate-800"><i class="fas fa-chart-line text-emerald-500 mr-2"></i> Auditoría de Cuidados</h3>
+                <div class="mt-3 space-y-2 text-sm">
+                    <div class="flex justify-between"><span>Baja complejidad</span><span class="font-mono">$19.769,27/h</span></div>
+                    <div class="flex justify-between"><span>Mediana complejidad</span><span class="font-mono">$29.090,86/h</span></div>
+                    <div class="flex justify-between"><span>Alta complejidad</span><span class="font-mono">$34.797,33/h</span></div>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 border border-slate-100">
+                <h3 class="text-lg font-bold text-slate-800"><i class="fas fa-gavel text-emerald-500 mr-2"></i> Peritos</h3>
+                <p class="text-sm mt-2">Según Ley Orgánica del Poder Judicial (Art. 361) y Colegios Profesionales: <strong class="text-emerald-600">$34.797,33 la hora</strong> (equivalente a auditoría alta complejidad).</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 border border-slate-100">
+                <h3 class="text-lg font-bold text-slate-800"><i class="fas fa-hospital-user text-emerald-500 mr-2"></i> Guardias Internación</h3>
+                <p class="text-xs text-slate-500 mb-2">Valores por hora según complejidad</p>
+                <div class="text-xs space-y-1">
+                    <div>Adulto mínimos (15 UPE): $16.205,55 diurno / $23.399,40 nocturno</div>
+                    <div>Pediátrico especiales (35 UPE): $37.812,95 diurno / $54.598,60 nocturno</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BONUS: Ideas evolución -->
+        <div class="bg-slate-800 rounded-2xl p-8 text-white">
+            <div class="flex items-center gap-3 mb-4">
+                <i class="fas fa-rocket text-2xl text-emerald-400"></i>
+                <h3 class="text-2xl font-bold">Próximos pasos para escalar</h3>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+                <div class="bg-slate-700/50 rounded-xl p-3"><i class="fas fa-user-plus mr-2 text-emerald-400"></i> Sistema de cuentas (guardar presupuestos)</div>
+                <div class="bg-slate-700/50 rounded-xl p-3"><i class="fas fa-file-pdf mr-2 text-emerald-400"></i> Exportar PDF profesional con membrete</div>
+                <div class="bg-slate-700/50 rounded-xl p-3"><i class="fas fa-mobile-alt mr-2 text-emerald-400"></i> App móvil con escáner de prácticas</div>
+                <div class="bg-slate-700/50 rounded-xl p-3"><i class="fas fa-cloud-upload-alt mr-2 text-emerald-400"></i> API REST para integración con sistemas</div>
+            </div>
+        </div>
+    </main>
+<footer class="border-t border-slate-200 bg-white mt-16">
+    <div class="max-w-7xl mx-auto px-4 py-10">
+
+        <div class="grid md:grid-cols-3 gap-8 text-sm">
+
+            <!-- INFO PROYECTO -->
+            <div>
+                <h4 class="font-semibold text-slate-800 mb-3">Sobre esta herramienta</h4>
+                <p class="text-slate-500 leading-relaxed">
+                    Esta calculadora está basada en el Nomenclador de Enfermería 2026 del Colegio de Profesionales en Enfermería de Santa Fe.
+                </p>
+                <p class="text-slate-500 mt-3 leading-relaxed">
+                    Es una herramienta <strong class="text-slate-700">gratuita y de libre acceso</strong>, creada con fines informativos y de apoyo para profesionales de la salud.
+                </p>
+                <p class="text-xs text-slate-400 mt-3">
+                    * Los valores son orientativos y pueden variar según acuerdos, instituciones o actualizaciones oficiales.
+                </p>
+            </div>
+
+            <!-- TU MARCA PERSONAL -->
+            <div>
+                <h4 class="font-semibold text-slate-800 mb-3">Desarrollado por</h4>
+                <p class="text-slate-700 font-medium">Tiago Raminelli</p>
+                <p class="text-slate-500 text-sm mt-1">
+                    Desarrollo de sistemas, automatización y herramientas digitales para negocios.
+                </p>
+
+                <div class="flex gap-4 mt-4 text-slate-500 text-lg">
+                    <a href="https://www.linkedin.com/in/tiago-raminelli/" target="_blank" class="hover:text-slate-800 transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/tiagoraminelli" target="_blank" class="hover:text-slate-800 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:tiagoraminelli4@gmail.com" class="hover:text-slate-800 transition">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.me/5493408402912" target="_blank" class="hover:text-green-600 transition">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- VALOR / DIFERENCIAL -->
+            <div>
+                <h4 class="font-semibold text-slate-800 mb-3">¿Para quién es?</h4>
+                <ul class="text-slate-500 space-y-2">
+                    <li>• Enfermeros independientes</li>
+                    <li>• Profesionales domiciliarios</li>
+                    <li>• Estudiantes de enfermería</li>
+                    <li>• Centros de salud y clínicas</li>
+                </ul>
+
+                <p class="text-xs text-slate-400 mt-4">
+                    Si encontrás errores o querés mejoras, podés contactarme.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- BOTTOM -->
+        <div class="border-t border-slate-100 mt-8 pt-6 text-center text-xs text-slate-400">
+            © 2026 · Nomenclador Enfermería · Herramienta independiente no oficial<br>
+            Basado en Resolución 194/95 · 1 UPE = 3 minutos
+        </div>
+
+    </div>
+</footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
